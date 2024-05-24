@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Assessment</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <h1 class="flex justify-center font-bold text-2xl">Shopping Cart</h1>
+    <div>
+      <h2 class="flex justify-center font-semibold text-lg">
+        Add Item for selection
+      </h2>
+      <form id="productForm" class="flex justify-center my-2">
+        <div class="flex">
+          <p class="pr-1">Product Name:</p>
+          <label for="productName"></label>
+          <input
+            id="productName"
+            type="text"
+            autocomplete="off"
+            class="bg-white rounded-lg border-2 border-gray-300"
+          />
+        </div>
+
+        <div class="flex">
+          <p class="pr-1 pl-2">Price:</p>
+          <label for="productPrice"></label>
+          <input
+            id="productPrice"
+            type="number"
+            min="1"
+            class="bg-white rounded-lg border-2 border-gray-300"
+          />
+        </div>
+
+        <div class="flex">
+          <p class="pr-1 pl-2">Image:</p>
+          <label for="imageUrl"></label>
+          <input
+            id="imageUrl"
+            type="url"
+            autocomplete="off"
+            class="bg-white rounded-lg border-2 border-gray-300"
+          />
+        </div>
+
+        <div>
+          <button
+            id="createProduct"
+            onclick="addProduct()"
+            type="button"
+            class="bg-white rounded-lg border-2 border-gray-300 px-2 hover:bg-slate-200 active:border-gray-500 ml-2"
+          >
+            Create Product
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <div
+      id="productList"
+      class="w-full max-h-2/5 overflow-y-auto border-2"
+    ></div>
+    <button
+      id="cartButton"
+      type="button"
+      class="bg-white rounded-lg border-2 border-gray-300 px-2 hover:bg-slate-200 active:border-gray-500 my-2 ml-4"
+    >
+      Add Cart
+    </button>
+
+    <div id="totalValue" class="w-full h-56 border-2 flex items-end">
+      <button
+        id="calculateButton"
+        type="button"
+        class="bg-white rounded-lg border-2 border-gray-300 px-2 hover:bg-slate-200 active:border-gray-500 my-2 ml-4"
+      >
+        Calculate Final Price
+      </button>
+    </div>
+  </body>
+</html>
