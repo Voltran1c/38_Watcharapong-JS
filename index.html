@@ -7,82 +7,92 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="script.js" defer></script>
   </head>
-  <body class="outline-2">
-    <h1 class="flex justify-center font-bold text-2xl">Shopping Cart</h1>
-    <div>
-      <h2 class="flex justify-center font-semibold text-lg">
-        Add Item for selection
-      </h2>
-      <form id="productForm" class="flex justify-center my-2">
-        <div class="flex">
-          <p class="pr-1">Product Name:</p>
-          <label for="productName"></label>
-          <input
-            id="productName"
-            type="text"
-            autocomplete="off"
-            class="bg-white rounded-lg border-2 border-gray-300"
-          />
-        </div>
+  <body class="outline-2 bg-slate-100 flex justify-center mt-6">
+    <div class="w-1/2 h-56 rounded-xl">
+      <h1 class="flex justify-center font-bold text-2xl text-orange-500">
+        Shopping Cart
+      </h1>
+      <div>
+        <h2 class="flex justify-center font-semibold text-base">
+          Add Item for selection
+        </h2>
+        <form id="productForm" class="flex justify-center my-2">
+          <div class="flex">
+            <p class="pr-1 font-bold">Product Name:</p>
+            <label for="productName"></label>
+            <input
+              id="productName"
+              type="text"
+              autocomplete="off"
+              class="bg-white rounded-lg border-2 border-gray-300"
+            />
+          </div>
 
-        <div class="flex">
-          <p class="pr-1 pl-2">Price:</p>
-          <label for="productPrice"></label>
-          <input
-            id="productPrice"
-            type="number"
-            min="1"
-            class="bg-white rounded-lg border-2 border-gray-300"
-          />
-        </div>
+          <div class="flex">
+            <p class="pr-1 pl-2 font-bold">Price:</p>
+            <label for="productPrice"></label>
+            <input
+              id="productPrice"
+              type="number"
+              min="1"
+              class="bg-white rounded-lg border-2 border-gray-300"
+            />
+          </div>
 
-        <div class="flex">
-          <p class="pr-1 pl-2">Image:</p>
-          <label for="imageUrl"></label>
-          <input
-            id="imageUrl"
-            type="url"
-            autocomplete="off"
-            class="bg-white rounded-lg border-2 border-gray-300"
-          />
-        </div>
+          <div class="flex">
+            <p class="pr-1 pl-2 font-bold">Image:</p>
+            <label for="imageUrl"></label>
+            <input
+              id="imageUrl"
+              type="url"
+              autocomplete="off"
+              class="bg-white rounded-lg border-2 border-gray-300"
+            />
+          </div>
 
-        <div>
-          <button
-            id="createProduct"
-            onclick="addProduct()"
-            type="button"
-            class="bg-white rounded-lg border-2 border-gray-300 px-2 hover:bg-slate-200 active:border-gray-500 ml-2"
-          >
-            Create Product
-          </button>
-        </div>
-      </form>
-    </div>
+          <div>
+            <button
+              id="createProduct"
+              onclick="addProduct()"
+              type="button"
+              class="py-1 px-2 ml-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+            >
+              Create Product
+            </button>
+          </div>
+        </form>
+      </div>
 
-    <div
-      id="productList"
-      class="w-full max-h-2/5 overflow-y-auto border-2"
-    ></div>
-    <button
-      id="cartButton"
-      onclick="addCart()"
-      type="button"
-      class="bg-white rounded-lg border-2 border-gray-300 px-2 hover:bg-slate-200 active:border-gray-500 my-2 ml-4"
-    >
-      Add Cart
-    </button>
-    <div id="cartList" class="w-full max-h-2/5 overflow-y-auto border-2"></div>
-
-    <div id="totalValue" class="w-full max-h-2/5 overflow-y-auto">
+      <div
+        id="productList"
+        class="w-full max-h-2/5 overflow-y-auto border-2"
+      ></div>
       <button
-        id="calculateButton"
+        id="cartButton"
+        onclick="addCart()"
         type="button"
-        class="bg-white rounded-lg border-2 border-gray-300 px-2 hover:bg-slate-200 active:border-gray-500 my-2 ml-4"
+        class="py-1 px-2 my-2 ml-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
       >
-        Calculate Final Price
+        Add Cart
       </button>
-      <p id="totalPrice" class="text-lg font-semibold my-2 ml-4"></p>
+      <div
+        id="cartList"
+        class="w-full max-h-2/5 overflow-y-auto border-2"
+      ></div>
+
+      <div id="totalValue" class="w-full max-h-2/5 overflow-y-auto">
+        <button
+          id="calculateButton"
+          type="button"
+          class="py-1 px-2 my-2 ml-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+        >
+          Calculate Final Price
+        </button>
+        <p
+          id="totalPrice"
+          class="text-lg font-semibold my-2 ml-4 text-green-500"
+        ></p>
+      </div>
     </div>
   </body>
 </html>
