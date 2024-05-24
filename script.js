@@ -32,7 +32,7 @@ function addProduct() {
 // validateProduct
 function validateProduct(productName, productPrice, productImage) {
   const trimmedName = productName.trim();
-  const imageUrlPattern = /\.(jpg|jpeg)$/i;
+  const imageUrlPattern = /\.(jpg|jpeg|gif)$/i;
   return trimmedName && productPrice && imageUrlPattern.test(productImage);
 }
 
